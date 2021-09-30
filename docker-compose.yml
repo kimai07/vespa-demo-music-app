@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  vespa:
+    image: "vespaengine/vespa"
+    container_name: vespa
+    hostname: vespa-container
+    privileged: true
+    ports:
+      - "8080:8080"
+      - "19071:19071"
