@@ -143,6 +143,8 @@ Success: put id:mynamespace:music::hardwired-to-self-destruct
 
 ## 検索
 
+musicインデックスのalbumフィールドに 'head' を含むドキュメントを検索する
+
 ```bash
 $ vespa query "select * from music where album contains 'head';"
 {
@@ -199,6 +201,16 @@ $ vespa query "select * from music where album contains 'head';"
     }
 }
 ```
+
+sddocnameフィールドにmusicを含むドキュメントを検索する
+
+- catの値に応じたweightが設定されスコア計算される
+
+cat|weight
+---|---
+pop|0.8
+rock|0.2
+jazz|0.1
 
 ```bash
 $ vespa query "select * from sources * where sddocname contains 'music';" "ranking=rank_albums" "ranking.features.query(user_profile)={{cat:pop}:0.8,{cat:rock}:0.2,{cat:jazz}:0.1}"
