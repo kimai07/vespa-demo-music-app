@@ -17,7 +17,7 @@ vespa version 7.469.18 compiled with go1.17.1 on darwin/amd64
 
 ## vespa clone
 
-雛形アプリ確認
+サンプルアプリケーションリストの確認
 
 ```bash
 $ vespa clone -l
